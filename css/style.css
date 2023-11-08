@@ -11,8 +11,8 @@ body {
     font-family: 'Poppins', sans-serif;
     color: var(--color-text);
     display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-template-rows: 64px auto;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 4rem minmax(calc(100vh - 4rem), auto);
     margin: 0;
 }
 
@@ -26,6 +26,10 @@ img {
     background-color: white;
     display: flex;
     flex-direction: column;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+    /* padding-right: var(--default-padding); */
 }
 
 .topnav {
@@ -69,6 +73,7 @@ main>figure {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.5rem;
+    padding-right: var(--default-padding);
 }
 
 .mainNav_menu,
@@ -77,6 +82,10 @@ main>figure {
     margin: 0;
     padding: 0;
     padding-left: var(--default-padding);
+}
+
+.menuNav_menu {
+    padding-right: var(--default-padding);
 }
 
 .mainNav_menu a,
@@ -103,7 +112,16 @@ main>figure {
     padding-top: var(--default-padding);
 }
 
+.mainNav_menu li {
+    margin-top: 1rem;
+}
+
 .mainNav_menu:last-child {
+    padding-bottom: var(--default-padding);
+}
+
+.mainNav_menu:not(:last-child) {
+    border-bottom: 2px solid gray;
     padding-bottom: var(--default-padding);
 }
 
@@ -152,8 +170,8 @@ main>figure {
     padding: var(--middle-padding) 0;
 }
 
-.summary .number {
-    font-size: 1.2rem;
+.summary_number {
+    font-size: 1rem;
     color: var(--primary-color);
     font-weight: 600;
     margin-left: var(--middle-padding);
@@ -161,11 +179,11 @@ main>figure {
 
 .separated {
     width: 1px;
-    background-color: color-mix(in srgb, var(--black), transparent 60%);
+    background-color: color-mix(in srgb, var(--black), transparent 70%);
     align-self: stretch;
 }
 
-.btn{
+.btn {
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
@@ -173,7 +191,7 @@ main>figure {
     padding: calc(var(--middle-padding) / 2) var(--default-padding);
 }
 
-.summary .btn{
+.summary_btn {
     align-self: stretch;
     display: flex;
     align-items: center;
